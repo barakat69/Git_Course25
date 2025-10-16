@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.7 on win32)" generated="2025-10-14T22:28:56.349815" rpa="false" schemaversion="5">
+<suite id="s1" name="Can Test" source="C:\Robot Framework\canbus_robot\tests\can_test.robot">
+<test id="s1-t1" name="Send And Receive CAN Message" line="5">
+<kw name="Open CAN Channel" owner="CANLibrary">
+<msg time="2025-10-14T22:28:56.667637" level="INFO">Connected to CAN channel: can0</msg>
+<arg>can0</arg>
+<doc>Opens CAN interface using python-can</doc>
+<status status="PASS" start="2025-10-14T22:28:56.667637" elapsed="0.000000"/>
+</kw>
+<kw name="Send CAN Message" owner="CANLibrary">
+<msg time="2025-10-14T22:28:56.667637" level="INFO">Sent CAN msg: ID=0x123, Data=[1, 2, 3, 4]</msg>
+<arg>0x123</arg>
+<arg>01,02,03,04</arg>
+<doc>Sends a CAN message</doc>
+<status status="PASS" start="2025-10-14T22:28:56.667637" elapsed="0.000000"/>
+</kw>
+<kw name="Read CAN Message" owner="CANLibrary">
+<msg time="2025-10-14T22:28:58.680960" level="INFO">${msg} = No message received</msg>
+<var>${msg}</var>
+<arg>2.0</arg>
+<doc>Reads a message from CAN bus</doc>
+<status status="PASS" start="2025-10-14T22:28:56.667637" elapsed="2.013323"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-14T22:28:58.680960" level="INFO">Received message: No message received</msg>
+<arg>Received message: ${msg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-14T22:28:58.680960" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-14T22:28:56.666599" elapsed="2.014361"/>
+</test>
+<status status="PASS" start="2025-10-14T22:28:56.358603" elapsed="2.327509"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Can Test" id="s1" pass="1" fail="0" skip="0">Can Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-14T22:28:58.686112" level="WARN">VirtualBus was not properly shut down</msg>
+</errors>
+</robot>
